@@ -11,7 +11,7 @@ body{
 }
 #root{
     position: absolute;
-    border:2px solid black;
+    border:2px solid transparent;
     width:350px;
     height: 350px;
     margin: auto;
@@ -21,4 +21,61 @@ body{
     bottom: 0;
     display: flex;
     flex-direction: column;
+    padding: 20px ;
+    border-radius: 25px;
+    box-shadow: #ea80ac -22px 18px 70px, #929cea 20px -15px 50px;
+}
+.calculator h1{
+      display: flex;
+      justify-content: center;
+      font-size: 2rem;
+      font-weight: 700;
+      color: #000;
+      margin-bottom: 20px;
+}
+.calculator input{
+   border: 2px solid black;
+   width: 80%;
+   margin-left: 35px;
+   height: 32px;
+   margin-bottom: 15px;
+   font-size: 15px;
+   font-weight: 700;
+
+}
+.operation-btn{
+    display: flex;
+    justify-content: space-evenly;
+}
+.operation-btn button{
+    background-color: #2B2B2B;
+    width: 40px;
+    height: 40px;
+    color: white;
+    font-size: 20px;
+    font-weight: 600;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: none;
+}
+.calculator .error{
+    text-align: center;
+    font-size: 22px;
+}
+.calculator .error span{
+     color: red;
+     display: block;
+     margin-top: 5px;
+     margin-bottom: 15px;
+}
+.calculator .result{
+    text-align: center;
+    font-size: 22px;
+}
+.calculator .result span{
+     color:blue;
+     display: block;
+     margin-top: 5px;
+     margin-bottom: 15px;
 }

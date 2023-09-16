@@ -1,10 +1,15 @@
-import React,{useState} from "react";
+import React,{useState,useEffect} from "react";
 
 const App=()=>{
+   
     const [input1,setInput1]=useState("");
     const [input2,setInput2]=useState("");
     const [result,setResult]=useState("");
     const [error,setError]=useState("");
+
+    useEffect(() => {
+        document.title = "react-calculator"; // Set the title when the component mounts
+    }, []); 
 
     const handleInputOne=(event)=>{
         setInput1(event.target.value);
@@ -64,14 +69,17 @@ const App=()=>{
     }
     
     return (
+        
         <div className="calculator">
             <h1>React Calculator</h1>
             <input type="text" placeholder="Num 1" value={input1} onChange={handleInputOne} />
             <input type="text" placeholder="Num 2" value={input2} onChange={handleInputTwo} />
+            <div className="operation-btn">
             <button type="button" onClick={()=>perFormOperation("addtion")}>+</button>
             <button type="button" onClick={()=>perFormOperation("substraction")}>-</button>
             <button type="button" onClick={()=>perFormOperation("multiply")}>*</button>
             <button type="button" onClick={()=>perFormOperation("divide")}>/</button>
+            </div>
             
             {error && <p className="error"><span>error!</span>{error}</p> }
             {result && <p className="result"><span>success!</span>{result}</p>}
